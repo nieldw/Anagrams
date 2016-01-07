@@ -1,5 +1,7 @@
 package za.co.bsg.ssd.anagram;
 
+import za.co.bsg.ssd.anagram.counter.AnagramCounter;
+import za.co.bsg.ssd.anagram.counter.PrimeFactorAnagramCounter;
 import za.co.bsg.ssd.anagram.printer.AnagramPrinter;
 import za.co.bsg.ssd.anagram.printer.PrintStreamAnagramPrinter;
 import za.co.bsg.ssd.anagram.reader.UrlDictionaryWordList;
@@ -20,8 +22,9 @@ public class Main {
         URL dictionary = Main.class.getResource("/british-english.txt");
         WordList wordList = new UrlDictionaryWordList(dictionary, StandardCharsets.UTF_8);
         AnagramPrinter anagramPrinter = new PrintStreamAnagramPrinter(System.out);
+        AnagramCounter anagramCounter = new PrimeFactorAnagramCounter();
 
-        AnagramCalculator anagramCalculator = new AnagramCalculator(wordList, null, anagramPrinter);
+        AnagramCalculator anagramCalculator = new AnagramCalculator(wordList, anagramCounter, anagramPrinter);
 
         try {
             anagramCalculator.run();

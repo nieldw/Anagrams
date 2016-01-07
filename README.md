@@ -41,6 +41,7 @@ dependencies you require.
 1. All characters should be treated in the same way. Characters with diacritics should receive no special treatment.
 1. Capitalisation does not matter.
 1. If there are no anagrams for a particular word length it should not be included in the output.
+1. Single characters are not considered as anagrams. For example, 'W' and 'w' are not two anagrams.
 
 ### Running your code
 You can compile and run your code in single step using the following command from the project root:
@@ -49,7 +50,7 @@ You can compile and run your code in single step using the following command fro
     
 Ensure that this command completes successfully before submitting your assignment:
 
-    $ mvn test
+    $ mvn verify
     
 ### Checking your results
 
