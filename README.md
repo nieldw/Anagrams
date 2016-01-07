@@ -1,6 +1,8 @@
 BSG Anagrams Code Assignment
 ============================
 
+[![Build Status](https://travis-ci.org/nieldw/Anagrams.svg)](https://travis-ci.org/nieldw/Anagrams)
+
 As part of our recruitment process, to help us to understand your level of proficiency we would like you to complete a 
 simple programming assignment. Your code to solve this assignment should be in a 'production-ready' state, i.e. it 
 should be suitable for committing to a production codebase for an application that has an indefinite lifespan. This code
