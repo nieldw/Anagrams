@@ -19,6 +19,6 @@ public class PrintStreamAnagramPrinter implements AnagramPrinter {
         orderedResultsMap.putAll(results);
 
         orderedResultsMap.forEach((length, anagrams) -> printStream.println(
-                String.format("For words '%2d' characters long there are '%2d' anagrams.", length, anagrams)));
+                String.format("For words '%2d' characters long there are '%4d' anagrams.", length, anagrams)));
     }
 }

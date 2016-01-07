@@ -15,9 +15,9 @@ public interface AnagramPrinter {
      * <p>
      *     Follow this format:<br/>
      *     <br/>
-     *     For words '10' characters long there are ' 2' anagrams.<br/>
-     *     For words ' 4' characters long there are ' 9' anagrams.<br/>
-     *     For words ' 3' characters long there are '15' anagrams.<br/>
+     *     For words '10' characters long there are '   2' anagrams.<br/>
+     *     For words ' 4' characters long there are '   9' anagrams.<br/>
+     *     For words ' 3' characters long there are '  15' anagrams.<br/>
      * </p>
      *
      * @param results The map of word length to number of anagrams.

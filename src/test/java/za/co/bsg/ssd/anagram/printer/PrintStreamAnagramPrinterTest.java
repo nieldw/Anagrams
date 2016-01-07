@@ -26,15 +26,15 @@ public class PrintStreamAnagramPrinterTest {
         // Exercise SUT
         Map<Integer, Integer> anagramCounts = new HashMap<>();
         anagramCounts.put(10, 2);
-        anagramCounts.put(3, 14);
+        anagramCounts.put(3, 1413);
         anagramCounts.put(13, 4);
 
         printer.print(anagramCounts);
 
         // Verify behaviour
         InOrder inOrder = inOrder(printStream);
-        inOrder.verify(printStream).println("For words '13' characters long there are ' 4' anagrams.");
-        inOrder.verify(printStream).println("For words '10' characters long there are ' 2' anagrams.");
-        inOrder.verify(printStream).println("For words ' 3' characters long there are '14' anagrams.");
+        inOrder.verify(printStream).println("For words '13' characters long there are '   4' anagrams.");
+        inOrder.verify(printStream).println("For words '10' characters long there are '   2' anagrams.");
+        inOrder.verify(printStream).println("For words ' 3' characters long there are '1413' anagrams.");
     }
 }
