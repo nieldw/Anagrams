@@ -4,13 +4,11 @@ import org.junit.Test;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static java.nio.charset.StandardCharsets.UTF_16;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -32,20 +30,6 @@ public class UrlDictionaryWordListIT {
 
         // Verify behaviour
         assertThat(strings, equalTo(expectedWordList));
-    }
-
-    @Test
-    public void readAllWithMismatchedCharSet_shouldReturnEmptyList() throws Exception {
-        // Set up fixture
-        Path tempFile = writeToTempFile(asList("Word 1", "Word 2", "Word 3"));
-
-        UrlDictionaryWordList wordList = new UrlDictionaryWordList(tempFile.toUri().toURL(), UTF_16);
-
-        // Exercise SUT
-        List<String> strings = wordList.readAll();
-
-        // Verify behaviour
-        assertThat(strings, hasItems(new String[]{}));
     }
 
     @Test

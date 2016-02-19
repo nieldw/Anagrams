@@ -1,13 +1,13 @@
 package za.co.bsg.ssd.anagram.reader;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UrlDictionaryWordList implements WordList {
 
@@ -22,8 +22,9 @@ public class UrlDictionaryWordList implements WordList {
     @Override
     public List<String> readAll() {
         try {
-            return Files.readAllLines(Paths.get(fileUrl.toURI()), charset);
-        } catch (IOException | URISyntaxException e) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileUrl.openStream(), charset));
+            return bufferedReader.lines().collect(Collectors.toList());
+        } catch (IOException e) {
             e.printStackTrace();
             return new LinkedList<>();
         }
