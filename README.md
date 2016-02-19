@@ -55,5 +55,6 @@ Ensure that this command completes successfully before submitting your assignmen
     $ mvn package
     
 ### Checking your results
+You can check that your results match the expected output by running the following command from the project root: 
 
-*TODO*
+    $ mvn verify
