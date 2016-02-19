@@ -13,12 +13,12 @@ automated tests that you may create in your submission. Following good naming co
 Instructions
 ------------
 
-This assignment requires you to write a short java application that reads in the English dictionary (included in the
-resources directory) and calculates the number of anagrams that then exist for each word length. As an example ‘friend’, 
-‘refind’, ‘finder’ would count as 3, whereas ‘monster’ and ‘mentors’ would count as 2, etc. The output should show how many 
-matches occurred per word length, so using the above example, 6 letters would have 3 and 7 letters would have 2. The 
-output of the application once run should print out the word length and number of anagrams for that word length for each 
-word in the dictionary that contains anagrams. The output should be ordered by word length in descending order.
+This assignment requires you to write a small java application that reads in the English dictionary (included in the
+resources directory) and calculates the number of anagrams that exist for each word length. As an example ‘friend’, 
+‘refind’, ‘finder’ would count as 3, whereas ‘monster’ and ‘mentors’ would count as 2, etc. The output should show how 
+many matches occurred per word length, so using the above example, the 6 letter words would have 3 and the 7 letter 
+words would have 2. The output of the application should be the word length and number of anagrams in the dictionary for
+words of that length. The output should be ordered by word length in descending order.
  
 For example: (Please note that these are not the correct outputs, but demonstrates the correct format.)
 > For words '12' characters long there are ' 2' anagrams.  
@@ -31,7 +31,7 @@ For example: (Please note that these are not the correct outputs, but demonstrat
 ### Implementation
 The assignment requires you provide implementations to three interfaces: `WordList`, which must read the contents of the
 dictionary file and return a list of strings, `AnagramCounter`, which must determine the number of anagrams for each 
-word length, and `AnagramPrinter`, which is responsible for the output to `System.out`.
+word length, and `AnagramPrinter`, which is responsible for printing the output to `System.out`.
 Provide your implementations to the `AnagramCalculator` instantiated in `Main`. All of these classes can be found 
 already in the `src\main\java` directory. You are free to design each implementation as you choose, and may use as many
 or few collaborating classes as you choose. You are encouraged to include unit tests.
@@ -52,7 +52,7 @@ You can compile and run your code in single step using the following command fro
     
 Ensure that this command completes successfully before submitting your assignment:
 
-    $ mvn verify
+    $ mvn package
     
 ### Checking your results
 
