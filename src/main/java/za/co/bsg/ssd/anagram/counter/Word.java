@@ -20,13 +20,18 @@ public class Word {
 
     @Override
     public int hashCode() {
-        return string.chars()
-                .map(c -> primeNumberMap.getPrime((char) c))
-                .reduce(1, (product, prime) -> product * prime);
+        return Long.hashCode(getPrimeProduct());
     }
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Word && hashCode() == obj.hashCode();
+        return obj instanceof Word && getPrimeProduct() == ((Word) obj).getPrimeProduct();
+    }
+
+    private long getPrimeProduct() {
+        return string.chars()
+                .map(c -> primeNumberMap.getPrime((char) c))
+                .asLongStream()
+                .reduce(1L, (product, prime) -> product * prime);
     }
 }
