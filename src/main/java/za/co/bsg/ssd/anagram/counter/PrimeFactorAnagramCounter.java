@@ -18,7 +18,9 @@ public class PrimeFactorAnagramCounter implements AnagramCounter {
 
         return words.stream()
                 .filter(word -> word.length() > 1)
-                .map(word -> new Word(word.toLowerCase(), primeNumberMap))
+                .map(String::toLowerCase)
+                .distinct()
+                .map(word -> new Word(word, primeNumberMap))
                 .collect(groupingBy(anagram -> anagram, counting()))
 
                 .entrySet().stream()

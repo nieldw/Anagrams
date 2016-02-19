@@ -22,20 +22,20 @@ public class AnagramCounterAcceptanceIT {
 
     private static final String EXPECTED_OUTPUT = "" +
             "For words '16' characters long there are '   2' anagrams.\n" +
-            "For words '15' characters long there are '   4' anagrams.\n" +
-            "For words '14' characters long there are '  16' anagrams.\n" +
-            "For words '13' characters long there are '  42' anagrams.\n" +
-            "For words '12' characters long there are ' 108' anagrams.\n" +
-            "For words '11' characters long there are ' 213' anagrams.\n" +
-            "For words '10' characters long there are ' 417' anagrams.\n" +
-            "For words ' 9' characters long there are ' 999' anagrams.\n" +
-            "For words ' 8' characters long there are '1929' anagrams.\n" +
-            "For words ' 7' characters long there are '3063' anagrams.\n" +
-            "For words ' 6' characters long there are '3443' anagrams.\n" +
-            "For words ' 5' characters long there are '2766' anagrams.\n" +
-            "For words ' 4' characters long there are '1781' anagrams.\n" +
-            "For words ' 3' characters long there are ' 392' anagrams.\n" +
-            "For words ' 2' characters long there are '  86' anagrams.\n";
+            "For words '15' characters long there are '   2' anagrams.\n" +
+            "For words '14' characters long there are '  10' anagrams.\n" +
+            "For words '13' characters long there are '  18' anagrams.\n" +
+            "For words '12' characters long there are '  72' anagrams.\n" +
+            "For words '11' characters long there are ' 133' anagrams.\n" +
+            "For words '10' characters long there are ' 313' anagrams.\n" +
+            "For words ' 9' characters long there are ' 804' anagrams.\n" +
+            "For words ' 8' characters long there are '1610' anagrams.\n" +
+            "For words ' 7' characters long there are '2662' anagrams.\n" +
+            "For words ' 6' characters long there are '2971' anagrams.\n" +
+            "For words ' 5' characters long there are '2370' anagrams.\n" +
+            "For words ' 4' characters long there are '1459' anagrams.\n" +
+            "For words ' 3' characters long there are ' 294' anagrams.\n" +
+            "For words ' 2' characters long there are '  66' anagrams.\n";
 
     @Before
     public void setUpOutputStream() {
@@ -48,11 +48,20 @@ public class AnagramCounterAcceptanceIT {
     }
 
     @Test
-    public void testAnagramCalculatorCorrectness() {
+    public void testPrimeAnagramCounterCorrectness() {
         // Exercise SUT
         Main.main(new String[0]);
 
-        // Verify behavior
+        // Verify behaviour
+        assertThat(sysOutContent.toString(), is(equalTo(EXPECTED_OUTPUT)));
+    }
+
+    @Test
+    public void testSortingAnagramCounterCorrectness() {
+        // Exercise SUT
+        Main.main(new String[] {"sorting"});
+
+        // Verify behaviour
         assertThat(sysOutContent.toString(), is(equalTo(EXPECTED_OUTPUT)));
     }
 }

@@ -10,8 +10,13 @@ import java.util.*;
 public class SortingAnagramCounter implements AnagramCounter {
     @Override
     public Map<Integer, Integer> countAnagramsPerWordLength(List<String> words) {
-        Map<String, Integer> anagramCount = new HashMap<>();
+        Set<String> uniqueLowercaseWords = new HashSet<>(words.size());
         for (String word : words) {
+            uniqueLowercaseWords.add(word.toLowerCase());
+        }
+
+        Map<String, Integer> anagramCount = new HashMap<>();
+        for (String word : uniqueLowercaseWords) {
             if (word.length() < 2) {
                 continue;
             }

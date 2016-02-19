@@ -42,6 +42,8 @@ dependencies you require.
 ### Edge cases
 1. All characters should be treated in the same way. Characters with diacritics should receive no special treatment.
 1. Capitalisation does not matter.
+1. Where a word occurs twice in the dictionary due to capitalisation (for example 'Booth' and 'booth'), that word should
+   only be considered once.
 1. If there are no anagrams for a particular word length it should not be included in the output.
 1. Single characters are not considered as anagrams. For example, 'W' and 'w' are not two anagrams.
 
