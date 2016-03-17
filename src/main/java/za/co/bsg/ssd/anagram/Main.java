@@ -20,24 +20,12 @@ public class Main {
             return;
         }
 
-        /**
-         * Provide implementations for {@link za.co.bsg.ssd.anagram.reader.WordList},
-         * {@link za.co.bsg.ssd.anagram.counter.AnagramCounter}, and
-         * {@link za.co.bsg.ssd.anagram.printer.AnagramPrinter}. Then replace the nulls in the instantiation
-         * below with your implementations.
-         */
         URL dictionary = Main.class.getResource("/british-english.txt");
         WordList wordList = new UrlDictionaryWordList(dictionary, StandardCharsets.UTF_8);
         AnagramPrinter anagramPrinter = new PrintStreamAnagramPrinter(System.out);
         AnagramCounter anagramCounter = args.length == 0 ? new PrimeFactorAnagramCounter() : new SortingAnagramCounter();
 
         AnagramCalculator anagramCalculator = new AnagramCalculator(wordList, anagramCounter, anagramPrinter);
-
-        try {
-            anagramCalculator.run();
-        } catch (NullPointerException e) {
-            System.err.println("Did you forget to provide your implementations to the AnagramCalculator?");
-            throw e;
-        }
+        anagramCalculator.run();
     }
 }
